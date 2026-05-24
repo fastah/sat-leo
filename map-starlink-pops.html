@@ -1,53 +1,72 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<title>Load data from an external GeoJSON file</title>
-<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-<link href="https://api.mapbox.com/mapbox-gl-js/v3.24.0/mapbox-gl.css" rel="stylesheet">
-<script src="https://api.mapbox.com/mapbox-gl-js/v3.24.0/mapbox-gl.js"></script>
-<style>
-body { margin: 0; padding: 0; }
-#map { position: absolute; top: 0; bottom: 0; width: 100%; }
-</style>
+    <meta charset="utf-8">
+    <title>Load data from an external GeoJSON file</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.24.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.24.0/mapbox-gl.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
+
 <body>
-<div id="map"></div>
+    <div id="map"></div>
 
-<script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoiczhtYXRodXIiLCJhIjoiY21wam16YWkyMWhnZjJwczJpc3AwMW1jbSJ9.BvWu_mlnoW2ngIEGEPqv-w';
-    const map = new mapboxgl.Map({
-        container: 'map', // container ID
-        // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-        style: 'mapbox://styles/mapbox/standard-satellite',
-        zoom: 5, // starting zoom
-        center: [-94.5, 39.1] // // starting center in [lng, lat]
-    });
-
-    map.on('style.load', () => {
-        map.setFog({}); // Set the default atmosphere style
-    });
-
-    map.on('load', () => {
-        map.addSource('starlink-ix-pop', {
-            type: 'geojson',
-            // Use a URL for the value for the `data` property.
-            data: 'starlink_pops_airports.geojson'
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiczhtYXRodXIiLCJhIjoiY21wam16YWkyMWhnZjJwczJpc3AwMW1jbSJ9.BvWu_mlnoW2ngIEGEPqv-w';
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/standard-satellite',
+            config: {
+                basemap: {
+                    lightPreset: "dawn",
+                    showPedestrianRoads: false,
+                    fuelingStationModePointOfInterestLabels: "none",
+                    showRoadLabels: false,
+                    showTransitLabels: false,
+                    font: "Montserrat"
+                }
+            },
+            center: [-98.70890, 35.12731],
+            zoom: 3.62,
+            bearing: 0.00,
+            pitch: 0.00,
         });
 
-        map.addLayer({
-            'id': 'starlink-layer',
-            'type': 'circle',
-            'source': 'starlink-ix-pop',
-            'paint': {
-                'circle-radius': 4,
-                'circle-stroke-width': 2,
-                'circle-color': 'red',
-                'circle-stroke-color': 'white'
-            }
+        map.on('load', () => {
+            map.addSource('starlink-ix-pop', {
+                type: 'geojson',
+                // Use a URL for the value for the `data` property.
+                data: 'starlink_pops_airports.geojson'
+            });
+
+            map.addLayer({
+                'id': 'starlink-layer',
+                'type': 'circle',
+                'source': 'starlink-ix-pop',
+                'paint': {
+                    'circle-radius': 4,
+                    'circle-stroke-width': 2,
+                    'circle-color': 'red',
+                    'circle-stroke-color': 'white'
+                }
+            });
         });
-    });
-</script>
+    </script>
 
 </body>
+
 </html>
