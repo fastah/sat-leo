@@ -62,11 +62,8 @@
                 'id': 'starlink-layer',
                 type: 'symbol',
                 source: 'starlink-ix-pop',
-                layout: {
-                    'icon-image': 'bus', // Use a Mapbox default icon or add a custom one
-                    'icon-allow-overlap': true,
-                    'text-field': ['get', 'title'] // Dynamically use the title from properties
-                }
+                'marker-symbol': 'bus', // Use a Mapbox default icon or add a custom one
+                'text-field': ['get', 'title'] // Dynamically use the title from properties
             });
         });
     </script>
