@@ -52,6 +52,14 @@
         });
 
         map.on('load', () => {
+
+            // Load an image from an external URL.
+            map.loadImage('./img/icons/Starlink_Logo_330px.png', (error, image) => {
+                if (error) throw error;
+                // Add the loaded image to the style's sprite with the ID 'kitten'.
+                map.addImage('starlink-logo', image);
+            });
+
             map.addSource('starlink-ix-pop', {
                 type: 'geojson',
                 // Use a URL for the value for the `data` property.
@@ -62,8 +70,12 @@
                 'id': 'starlink-layer',
                 type: 'symbol',
                 source: 'starlink-ix-pop',
-                'marker-symbol': 'bus', // Use a Mapbox default icon or add a custom one
-                'text-field': ['get', 'title'] // Dynamically use the title from properties
+                layout: {
+                    'icon-image': 'starlink-logo',
+                    'icon-size': 0.2,
+                    'icon-anchor': 'top',
+                    'text-field': ['get', 'title']
+                }
             });
         });
     </script>
