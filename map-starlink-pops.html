@@ -29,19 +29,24 @@
         mapboxgl.accessToken = 'pk.eyJ1IjoiczhtYXRodXIiLCJhIjoiY21wam16YWkyMWhnZjJwczJpc3AwMW1jbSJ9.BvWu_mlnoW2ngIEGEPqv-w';
         const map = new mapboxgl.Map({
             container: 'map',
-            style: 'mapbox://styles/mapbox/standard-satellite',
+            style: 'mapbox://styles/mapbox/standard',
             config: {
                 basemap: {
-                    lightPreset: "dawn",
                     showPedestrianRoads: false,
-                    fuelingStationModePointOfInterestLabels: "none",
+                    showPointOfInterestLabels: false,
                     showRoadLabels: false,
                     showTransitLabels: false,
-                    font: "Montserrat"
+                    show3dObjects: false,
+                    show3dBuildings: false,
+                    show3dTrees: false,
+                    show3dLandmarks: false,
+                    showLandmarkIconLabels: false,
+                    showIndoorLabels: false,
+                    theme: "monochrome"
                 }
             },
-            center: [-98.70890, 35.12731],
-            zoom: 3.62,
+            center: [-99.18717, 33.59513],
+            zoom: 3.45,
             bearing: 0.00,
             pitch: 0.00,
         });
