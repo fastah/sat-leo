@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Load data from an external GeoJSON file</title>
+    <title>Starlink - IX and PoPs</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
     <link href="https://api.mapbox.com/mapbox-gl-js/v3.24.0/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.24.0/mapbox-gl.js"></script>
@@ -60,13 +60,12 @@
 
             map.addLayer({
                 'id': 'starlink-layer',
-                'type': 'circle',
-                'source': 'starlink-ix-pop',
-                'paint': {
-                    'circle-radius': 4,
-                    'circle-stroke-width': 2,
-                    'circle-color': 'red',
-                    'circle-stroke-color': 'white'
+                type: 'symbol',
+                source: 'starlink-ix-pop',
+                layout: {
+                    'icon-image': 'bus', // Use a Mapbox default icon or add a custom one
+                    'icon-allow-overlap': true,
+                    'text-field': ['get', 'title'] // Dynamically use the title from properties
                 }
             });
         });
