@@ -25,14 +25,46 @@
 <body>
 
   <!-- Add your site or application content here -->
-  <h1>NANOG 97 - <a href="https://nanog.org/events/nanog-97/content/5783/" target="_blank">Designing cloud workloads for LEO satellite internet users</a> - by Sid Mathur</h1>
-  <span>Last updated 24-May-2026</span>
+  <h1><a href="https://nanog.org/events/nanog-97/" target="_blank">NANOG 97</a> - <a href="https://nanog.org/events/nanog-97/content/5783/" target="_blank">Designing cloud workloads for LEO satellite internet users</a></h1>
+  <h3>Sid Mathur, sid@getfastah.com, <a href="https://www.linkedin.com/in/simathur/">LinkedIn</a></h3>
+  <span>Last updated 26-May-2026</span>
+  <h2>Supplementary material and references</h2>
   <section> 
-    <h2>Internet Exchange (IX) / Points-of-Presence (PoP)</h2>
+    <h3>Map view of Internet Exchange (IX) / Points-of-Presence (PoP)</h3>
     <ul>
       <li><a href="map-starlink-pops.html" target="_blank">Starlink IX map</a> (<a href="starlink_pops_airports.geojson">GeoJSON</a>)</li>
       <li><a href="https://chris.elsen.xyz/dx-location-details/" target="_blank">Amazon LEO - AWS Direct Connect map</a> (<a href="https://github.com/chriselsen/dx-location-details/tree/main" target="_blank">Github</a>)</li>
     </ul>
+  </section>
+  <section> 
+    <h3>PeeringDB list of peers (IX facilities)</h3>
+    <ul>
+      <li><a href="https://www.peeringdb.com/net/18747" target="_blank">PeeringDB - Starlink Public Peering list</a> (compare with <a href="https://starlink.com/public-files/business_pni_map_d.webp" target="_blank">official Starlink PNI map</a>)</li>
+      <li><a href="https://www.peeringdb.com/net/1418" target="_blank">PeeringDB - Amazon/AWS Public Peering list</a> (compare with <a href="https://aws.amazon.com/directconnect/locations/" target="_blank">official AWS Direct Connect locations list</a>)</li>
+    </ul>
+  </section>
+  <section>
+    <h3>Amazon Leo at AWS re:Invent 2025</h3>
+    <ul>
+      <li><a href="https://www.youtube.com/watch?v=45MFTpKfxII" target="_blank">(ARC320) Architecting resilient global networks with Amazon Leo</a></li>
+      <li><a href="https://www.youtube.com/watch?v=nZCx612z930" target="_blank">(AMZ302) Amazon Leo: Building a Low Earth Orbit Satellite Network on AWS</a></li>
+    </ul>
+  </section>
+  <section>
+    <h3>Cross-cloud interconnect offerings from hyperscalers</h3>
+    <ul>
+      <li><a href="https://docs.aws.amazon.com/interconnect/latest/userguide/getting-started-multicloud.html" target="_blank">AWS Interconnect - Multicloud</a> (<a target="_blank" href="https://aws.amazon.com/interconnect/multicloud/" target="_blank">feature page</a>)</li>
+      <li><a href="https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/cci-overview" target="_blank">Google Cloud - Cross-Cloud Interconnect</a> (<a target="_blank" href="https://docs.cloud.google.com/static/network-connectivity/docs/interconnect/images/cci-support.png" target="_blank">architecture diagram</a>)</li>
+    </ul>
+  </section>
+  <section>
+    <h3>Additional data sources & attributions</h3>
+      <ul>
+        <li>Starlink - <a href="https://starlink.com/public-files/starlinkProgressReport_2025.pdf" target="_blank">Official Annual Report for 2025</a></li>
+        <li>Starlink - official <a href="https://geoip.starlinkisp.net/pops.csv" target="_blank">PoPs CSV feed</a> and <a target="_blank" href="https://geoip.starlinkisp.net/feed.csv">IP geolocations by Country CSV feed</a></li>
+        <li>Starlink - <a href="https://github.com/clarkzjw/starlink-geoip-data" target="_blank">University of Victoria - normalized, up-to-date IP Geolocation and Points-of-Presence data+maps</a></li>
+        <li>IETF Internet Architecture Board - <a href="https://intarchboard.github.io/draft-iab-ip-geo-workshop-report/draft-iab-ip-geo-workshop-report.html" target="_blank">IETF IAB Workshop on IP geolocation</a> including <a target="_blank" href="https://www.ietf.org/slides/slides-ipgeows-paper-position-paper-starlink-00.pdf">Starlink Network Engineering position paper</a></li>
+      </ul>
   </section>
   <script src="js/app.js"></script>
 
